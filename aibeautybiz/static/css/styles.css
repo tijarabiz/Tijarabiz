@@ -1,0 +1,32 @@
+:root{--purple1:#A178F2;--purple2:#CBA4F7;--purple3:#E5D6FA;--gold:#D4AF37;--text:#333}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;color:var(--text)}
+.container{max-width:1100px;margin:0 auto;padding:0 16px}
+.site-header{background:linear-gradient(90deg,var(--purple1),var(--purple2),var(--purple3));color:#fff}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+.header-inner a{color:#fff;text-decoration:none;margin:0 8px}
+.logo{font-weight:700}
+.hero{background:linear-gradient(180deg,var(--purple3),#fff);padding:64px 0}
+.hero-inner{display:grid;grid-template-columns:1fr;gap:24px}
+@media(min-width:900px){.hero-inner{grid-template-columns:1.1fr .9fr}}
+.hero h1{font-size:42px;margin:0 0 12px}
+.hero p{font-size:18px;margin:0 0 20px}
+.button{background:var(--purple1);color:#fff;padding:12px 18px;border-radius:8px;border:none;cursor:pointer;text-decoration:none;display:inline-block}
+.button.gold{background:var(--gold);color:#111}
+.grid-3{display:grid;grid-template-columns:1fr;gap:16px}
+@media(min-width:900px){.grid-3{grid-template-columns:repeat(3,1fr)}}
+.card{border:1px solid #eee;border-radius:12px;padding:18px;background:#fff}
+.section{padding:48px 0}
+.footer{background:#fafafa;padding:24px 0;border-top:1px solid #eee}
+.dashboard{display:grid;grid-template-columns:260px 1fr}
+.sidebar{border-right:1px solid #eee;padding:16px}
+.sidebar a{display:block;padding:10px;border-radius:8px;margin-bottom:6px;color:#333;text-decoration:none}
+.sidebar a.active{background:var(--purple3)}
+.content{padding:16px}
+.lang-toggle select{border-radius:6px;border:1px solid #fff;background:transparent;color:#fff;padding:6px}
+.table{width:100%;border-collapse:collapse}
+.table th,.table td{border-bottom:1px solid #eee;padding:10px;text-align:left}
+input,select,textarea{width:100%;padding:10px;border:1px solid #ddd;border-radius:8px}
+form .row{display:grid;grid-template-columns:1fr;gap:12px}
+@media(min-width:800px){form .row{grid-template-columns:repeat(2,1fr)}}
+.alert{padding:10px;border-radius:8px;background:#f6f6ff;border:1px solid #d9d9ff}

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans 'Dashboard - AIBeautyBiz' %}{% endblock %}
+{% block content %}
+<div class="dashboard">
+  <aside class="sidebar">
+    <a class="active" href="#">{% trans 'Overview' %}</a>
+    <a href="#">{% trans 'Clients' %}</a>
+    <a href="#">{% trans 'Inventory' %}</a>
+    <a href="#">{% trans 'Staff' %}</a>
+    <a href="#">{% trans 'Marketing' %}</a>
+    <a href="#">{% trans 'Analytics' %}</a>
+    <a href="#">{% trans 'Trends' %}</a>
+  </aside>
+  <main class="content">
+    <h2>{% trans 'Welcome to AIBeautyBiz' %}</h2>
+    <div class="grid-3">
+      <div class="card"><h3>{% trans 'Revenue' %}</h3><p>$0</p></div>
+      <div class="card"><h3>{% trans 'Client Engagement' %}</h3><p>—</p></div>
+      <div class="card"><h3>{% trans 'Inventory Alerts' %}</h3><p>—</p></div>
+    </div>
+  </main>
+</div>
+{% endblock %}

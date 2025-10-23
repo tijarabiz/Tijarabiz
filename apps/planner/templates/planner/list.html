@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans 'Saved Plans' %}{% endblock %}
+{% block content %}
+<section class="section"><div class="container">
+  <h1>{% trans 'Saved Plans' %}</h1>
+  {% for p in plans %}
+    <div class="card" style="margin-bottom:12px">
+      <h3>{{ p.client_name|default:_('Untitled Client') }}</h3>
+      <pre style="white-space:pre-wrap">{{ p.suggested_plan }}</pre>
+      <small>{{ p.created_at }}</small>
+    </div>
+  {% empty %}
+    <p>{% trans 'No plans yet.' %}</p>
+  {% endfor %}
+</div></section>
+{% endblock %}

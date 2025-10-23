@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans 'Import Clients' %}{% endblock %}
+{% block content %}
+<section class="section"><div class="container">
+  <h1>{% trans 'Import Clients' %}</h1>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="file" accept=".csv" />
+    <div style="margin-top:12px"><button class="button" type="submit">{% trans 'Upload' %}</button></div>
+  </form>
+  <p style="margin-top:8px">{% trans 'CSV headers: name,email,phone,notes' %}</p>
+</div></section>
+{% endblock %}

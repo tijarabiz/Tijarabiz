@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans 'AI Treatment Planner' %}{% endblock %}
+{% block content %}
+<section class="section"><div class="container">
+  <h1>{% trans 'AI Treatment Planner' %}</h1>
+  <form method="post">
+    {% csrf_token %}
+    <div class="row">
+      <div><label>{% trans 'Client Name' %}</label><input name="client_name" /></div>
+      <div><label>{% trans 'Skin Type' %}</label><input name="skin_type" placeholder="{% trans 'e.g., oily, dry' %}" /></div>
+      <div><label>{% trans 'Hair Type' %}</label><input name="hair_type" placeholder="{% trans 'e.g., curly, straight' %}" /></div>
+      <div><label>{% trans 'Age' %}</label><input type="number" name="age" min="0" /></div>
+      <div style="grid-column:1/-1"><label>{% trans 'Previous Treatments' %}</label><textarea name="previous" rows="4"></textarea></div>
+    </div>
+    <div style="margin-top:12px"><button class="button" type="submit">{% trans 'Generate Plan' %}</button></div>
+  </form>
+</div></section>
+{% endblock %}

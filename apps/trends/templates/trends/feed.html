@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans 'Global Trends' %}{% endblock %}
+{% block content %}
+<section class="section"><div class="container">
+  <h1>{% trans 'Global Trends & Innovation' %}</h1>
+  <form method="get" style="margin-bottom:12px">
+    <select name="type">
+      <option value="spa" {% if business_type=='spa' %}selected{% endif %}>Spa</option>
+      <option value="salon" {% if business_type=='salon' %}selected{% endif %}>Salon</option>
+      <option value="clinic" {% if business_type=='clinic' %}selected{% endif %}>Aesthetic Clinic</option>
+    </select>
+    <button class="button" type="submit">{% trans 'Filter' %}</button>
+  </form>
+  <div class="grid-3">
+    {% for item in items %}
+      <div class="card">
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.description }}</p>
+      </div>
+    {% endfor %}
+  </div>
+</div></section>
+{% endblock %}
