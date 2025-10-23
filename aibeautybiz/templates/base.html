@@ -1,0 +1,40 @@
+{% load i18n static %}
+<!DOCTYPE html>
+<html lang="{% get_current_language %}" dir="{% if LANGUAGE_CODE == 'ar' %}rtl{% else %}ltr{% endif %}">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{% block title %}AIBeautyBiz{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="logo">AIBeautyBiz</a>
+      <nav>
+        <a href="/">{% trans 'Home' %}</a>
+        <a href="/features/">{% trans 'Features' %}</a>
+        <a href="/about/">{% trans 'About' %}</a>
+        <a href="/blog/">{% trans 'Blog' %}</a>
+        <a href="/contact/">{% trans 'Contact' %}</a>
+      </nav>
+      <form action="/i18n/setlang/" method="post" class="lang-toggle">
+        {% csrf_token %}
+        <input name="next" type="hidden" value="{{ request.path }}" />
+        <select name="language" onchange="this.form.submit()">
+          <option value="en" {% if LANGUAGE_CODE == 'en' %}selected{% endif %}>EN</option>
+          <option value="ar" {% if LANGUAGE_CODE == 'ar' %}selected{% endif %}>AR</option>
+        </select>
+      </form>
+    </div>
+  </header>
+
+  {% block content %}{% endblock %}
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; AIBeautyBiz</p>
+    </div>
+  </footer>
+</body>
+</html>

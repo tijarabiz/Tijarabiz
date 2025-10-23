@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}AIBeautyBiz - {% trans 'Grow your beauty business with AI' %}{% endblock %}
+{% block content %}
+<section class="hero">
+  <div class="container hero-inner">
+    <div>
+      <h1>{% trans 'AIBeautyBiz: AI Tools for Clinics, Spas & Salons' %}</h1>
+      <p>{% trans 'Treatment planning, client CRM, inventory, marketing, analytics, and global trends—everything in one place.' %}</p>
+      <div>
+        <a class="button" href="/signup/">{% trans 'Start Free Trial' %}</a>
+        <a class="button gold" href="/pricing/">{% trans 'Subscribe Now' %}</a>
+      </div>
+    </div>
+    <div>
+      <div class="card">
+        <h3>{% trans 'Core Features' %}</h3>
+        <ul>
+          <li>{% trans 'AI Treatment Planner' %}</li>
+          <li>{% trans 'Client Management & Reminders' %}</li>
+          <li>{% trans 'Inventory & Expiry Alerts' %}</li>
+          <li>{% trans 'Marketing Assistant' %}</li>
+          <li>{% trans 'Analytics Dashboard' %}</li>
+          <li>{% trans 'Global Trends Feed' %}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <h2>{% trans 'How it works' %}</h2>
+    <div class="grid-3">
+      <div class="card"><strong>1.</strong> {% trans 'Sign up (no card required)' %}</div>
+      <div class="card"><strong>2.</strong> {% trans 'Setup your business and clients' %}</div>
+      <div class="card"><strong>3.</strong> {% trans 'Run AI-powered operations' %}</div>
+    </div>
+  </div>
+</section>
+{% endblock %}

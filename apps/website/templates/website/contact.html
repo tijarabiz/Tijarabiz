@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans 'Contact - AIBeautyBiz' %}{% endblock %}
+{% block content %}
+<section class="section"><div class="container">
+  <h1>{% trans 'Contact Us' %}</h1>
+  <form>
+    <div class="row">
+      <div><label>{% trans 'Name' %}</label><input /></div>
+      <div><label>{% trans 'Email' %}</label><input type="email" /></div>
+      <div><label>{% trans 'Message' %}</label><textarea rows="4"></textarea></div>
+    </div>
+    <div style="margin-top:12px"><button class="button" type="button">{% trans 'Send' %}</button></div>
+  </form>
+</div></section>
+{% endblock %}

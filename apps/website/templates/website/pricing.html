@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans 'Pricing - AIBeautyBiz' %}{% endblock %}
+{% block content %}
+<section class="section"><div class="container">
+  <h1>{% trans '$100/month after 30-day free trial' %}</h1>
+  <p>{% trans 'No card needed for the trial. One trial per business name and email.' %}</p>
+  <div class="card">
+    <h3>{% trans 'Subscription' %}</h3>
+    <form action="/subscribe/checkout/" method="get">
+      <label>{% trans 'Coupon code (optional)' %}</label>
+      <input name="coupon" placeholder="PROMO50 or PROMO100" />
+      <div style="margin-top:12px">
+        <button class="button" type="submit">{% trans 'Checkout' %}</button>
+      </div>
+    </form>
+  </div>
+</div></section>
+{% endblock %}

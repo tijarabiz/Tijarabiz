@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans 'Sign Up - AIBeautyBiz' %}{% endblock %}
+{% block content %}
+<section class="section"><div class="container">
+  <h1>{% trans 'Create your account' %}</h1>
+  <div class="grid-3">
+    <div class="card">
+      <h3>{% trans 'Free Trial (30 days, no card)' %}</h3>
+      <form method="post">
+        {% csrf_token %}
+        <input type="hidden" name="action" value="free_trial" />
+        {{ form.username.label_tag }}
+        {{ form.username }}
+        {{ form.password1.label_tag }}
+        {{ form.password1 }}
+        {{ form.password2.label_tag }}
+        {{ form.password2 }}
+        <div style="margin-top:12px"><button class="button" type="submit">{% trans 'Start Free Trial' %}</button></div>
+      </form>
+    </div>
+    <div class="card">
+      <h3>{% trans 'Paid subscription or coupon' %}</h3>
+      <form method="post">
+        {% csrf_token %}
+        <input type="hidden" name="action" value="paid" />
+        {{ form.username.label_tag }}
+        {{ form.username }}
+        {{ form.password1.label_tag }}
+        {{ form.password1 }}
+        {{ form.password2.label_tag }}
+        {{ form.password2 }}
+        <div style="margin-top:12px"><button class="button gold" type="submit">{% trans 'Continue to Checkout' %}</button></div>
+      </form>
+    </div>
+  </div>
+</div></section>
+{% endblock %}

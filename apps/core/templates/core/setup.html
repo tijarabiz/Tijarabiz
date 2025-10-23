@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans 'Setup Wizard' %}{% endblock %}
+{% block content %}
+<section class="section">
+  <div class="container">
+    <h1>{% trans 'Start your 30-day free trial' %}</h1>
+    <form method="post">
+      {% csrf_token %}
+      <div class="row">
+        <div>
+          <label>{% trans 'Business Name' %}</label>
+          <input name="name" required />
+        </div>
+        <div>
+          <label>{% trans 'Business Email' %}</label>
+          <input type="email" name="email" required />
+        </div>
+        <div>
+          <label>{% trans 'Phone' %}</label>
+          <input name="phone" />
+        </div>
+        <div>
+          <label>{% trans 'Business Type' %}</label>
+          <select name="business_type">
+            <option value="spa">{% trans 'Spa' %}</option>
+            <option value="salon">{% trans 'Salon' %}</option>
+            <option value="clinic">{% trans 'Aesthetic Clinic' %}</option>
+          </select>
+        </div>
+        <div>
+          <label>{% trans 'Number of Staff' %}</label>
+          <input type="number" name="num_staff" min="1" value="1" />
+        </div>
+      </div>
+      <div style="margin-top:16px">
+        <button class="button" type="submit">{% trans 'Start Free Trial' %}</button>
+      </div>
+    </form>
+  </div>
+</section>
+{% endblock %}

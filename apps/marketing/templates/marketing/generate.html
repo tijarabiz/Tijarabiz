@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans 'Marketing Assistant' %}{% endblock %}
+{% block content %}
+<section class="section"><div class="container">
+  <h1>{% trans 'Marketing Assistant' %}</h1>
+  <form method="post">
+    {% csrf_token %}
+    <label>{% trans 'Topic' %}</label>
+    <input name="topic" placeholder="{% trans 'HydraFacial promo this weekend' %}" />
+    <div style="margin-top:12px"><button class="button" type="submit">{% trans 'Generate' %}</button></div>
+  </form>
+  {% if generated %}
+  <div class="card" style="margin-top:16px"><pre style="white-space:pre-wrap">{{ generated }}</pre></div>
+  {% endif %}
+</div></section>
+{% endblock %}

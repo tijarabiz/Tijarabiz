@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans 'Features - AIBeautyBiz' %}{% endblock %}
+{% block content %}
+<section class="section"><div class="container">
+  <h1>{% trans 'Features' %}</h1>
+  <div class="grid-3">
+    <div class="card"><h3>{% trans 'AI Treatment Planner' %}</h3><p>{% trans 'Personalized plans based on client profile and global trends.' %}</p></div>
+    <div class="card"><h3>{% trans 'Marketing Assistant' %}</h3><p>{% trans 'Generate campaigns, posts, and promotions automatically.' %}</p></div>
+    <div class="card"><h3>{% trans 'Analytics' %}</h3><p>{% trans 'Track revenue, engagement, and inventory forecasts.' %}</p></div>
+  </div>
+</div></section>
+{% endblock %}
