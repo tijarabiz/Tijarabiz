@@ -12,6 +12,13 @@ urlpatterns += i18n_patterns(
     path("admin/", admin.site.urls),
     path("", include("apps.website.urls")),
     path("core/", include("apps.core.urls")),
+    path("planner/", include("apps.planner.urls")),
+    path("clients/", include("apps.clients.urls")),
+    path("inventory/", include("apps.inventory.urls")),
+    path("staff/", include("apps.staff.urls")),
+    path("marketing/", include("apps.marketing.urls")),
+    path("analytics/", include("apps.analytics.urls")),
+    path("trends/", include("apps.trends.urls")),
 )
 
 if settings.DEBUG:

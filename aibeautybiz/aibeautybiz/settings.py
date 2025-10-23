@@ -31,6 +31,13 @@ INSTALLED_APPS = [
     # Local apps
     "apps.core",
     "apps.website",
+    "apps.planner",
+    "apps.clients",
+    "apps.inventory",
+    "apps.staff",
+    "apps.marketing",
+    "apps.analytics",
+    "apps.trends",
 ]
 
 MIDDLEWARE = [
